@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Nav.css';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 
 export class Nav extends Component {
@@ -13,7 +13,7 @@ render() {
   
   return (
     <div className="Nav">
-      NAV COMPONENT
+    
     </div>
   );
 }
