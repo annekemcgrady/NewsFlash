@@ -1,9 +1,10 @@
 import React from 'react';
+import './HeadlineCard.css';
 
 const HeadlineCard = () => {
 
   return(
-    <div>Headline Card</div>
+    <div className="card">Headline Card</div>
   )
 
 }

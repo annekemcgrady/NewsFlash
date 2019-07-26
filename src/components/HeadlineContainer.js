@@ -1,12 +1,13 @@
 import React from 'react';
+import './HeadlineContainer.css';
 import HeadlineCard from './HeadlineCard';
 
 const HeadlineContainer = () => {
 
 
-  
+
   return(
-    <div>Headline Container
+    <div className="headline-container">Headline Container
 
     </div>
   )

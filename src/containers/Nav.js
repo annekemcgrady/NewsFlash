@@ -5,15 +5,15 @@ import { connect } from 'react-redux';
 
 export class Nav extends Component {
   
-componentDidMount=()=>{
+componentDidMount() {
 
   }
   
-  render =()=> {
+render() {
   
   return (
     <div className="Nav">
-      
+      NAV COMPONENT
     </div>
   );
 }
