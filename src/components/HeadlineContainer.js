@@ -1,9 +1,14 @@
 import React from 'react';
+import HeadlineCard from './HeadlineCard';
 
 const HeadlineContainer = () => {
 
+
+  
   return(
-    <div>Headline Container</div>
+    <div>Headline Container
+
+    </div>
   )
 
 }
