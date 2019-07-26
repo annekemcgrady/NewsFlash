@@ -12,6 +12,7 @@ import { Route } from 'react-router';
 export class App extends Component {
   
   componentDidMount = async () => {
+    console.log('ComponentDidMount firing')
     let response;
 
     try {
@@ -35,14 +36,15 @@ export class App extends Component {
         <Route path="/" component={App} />
         <Route exact path="/main" component={App} />
         <Route path='/article/:id' render={({ match }) => {
-        const article = this.props.headlines.find(article => article.id === parseInt(match.params.id));
-  
-            if (!article) {
-              return (<div>This article is no longer available! </div>);  
-            }
-            return <ArticlePage match={match} {...article} />
-            
-          }} /> */}
+          
+          const article = this.props.headlines.find(article => article.id == match.params.id);
+            console.log(article)
+              if (!article) {
+                return (<div>This article is no longer available!</div>);  
+              }
+              return <ArticlePage match={match} {...article} />
+              
+            }} /> 
       </div>
     );
   }
