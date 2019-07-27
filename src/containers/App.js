@@ -5,7 +5,7 @@ import ArticlePage from '../components/ArticlePage';
 import Nav from './Nav.js'
 import { connect } from 'react-redux';
 import { fetchHeadlines, fetchCategoryHeadlines, fetchGIF } from '../apiCalls/apiCalls.js';
-import { addHeadlines } from '../actions';
+import { addHeadlines, addError } from '../actions';
 import { Route } from 'react-router';
 
 
@@ -60,7 +60,7 @@ export class App extends Component {
       const cleanedArticles = [...cleanedGenArts, ...cleanedSportsArts, ...cleanedSciArts, ...cleanedHealthArts, ...cleanedBusArts, ...cleanedEntArts]
       this.props.setHeadlines(cleanedArticles)
     } catch(error) {
-      throw new Error("Error", error.message)
+      this.props.setError(error.message)
     }
   }
 
@@ -87,13 +87,11 @@ export class App extends Component {
         <Route exact path='/business' render={() => <HeadlineContainer data={this.filterArticles('business')} />}/>
         <Route exact path='/health' render={() => <HeadlineContainer data={this.filterArticles('health')} />}/>
         <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
-        <Route path='/article/:id' render={({ match }) => {
-          const article = this.props.headlines.find(article => article.id === match.params.id);
-              if (!article) {
-                return (<div>This article is no longer available!</div>);  
-              }
-              return <ArticlePage match={match} {...article} />
-              
+       
+        <Route exact path='/:category/:id' render={({ match }) => {
+          const { id } = match.params
+          const foundArticle = this.props.headlines.find(article => article.id === match.params.id);
+            return foundArticle && <ArticlePage {...foundArticle} />              
             }} /> 
       </div>
     );
@@ -106,7 +104,8 @@ export const mapStateToProps = state => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  setHeadlines: headlines => dispatch(addHeadlines(headlines))
+  setHeadlines: headlines => dispatch(addHeadlines(headlines)),
+  setError: errorMsg => dispatch(addError(errorMsg))
 })
 
 

@@ -1,26 +1,31 @@
 .card {
-  height: 200px;
+  height: 250px;
   width: 100%;
-  border: 1px solid pink;
+  border: 1px solid black;
   padding: 10px;
   margin: 10px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+}
+h2{
+  padding-bottom: 0px;
 }
 
+p {
+  padding-top: 0;
+}
 
 img {
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
   padding: 5px;
   border-radius: 50px;
 }
 
 .card-navlink {
   text-decoration: none;
-  border: 1px solid black;
   background-color: blue;
-  height: 20px;
+  height: 30px;
   width: 100px;
   color: white;
   font-size: .5em;
