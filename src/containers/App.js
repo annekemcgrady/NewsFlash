@@ -81,7 +81,7 @@ export class App extends Component {
     return (
       <div className="App">
         <Route path='/' component={Nav} />
-        <Route path='/main' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
+        <Route exact path='/main' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
         <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
         <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
         <Route exact path='/business' render={() => <HeadlineContainer data={this.filterArticles('business')} />}/>

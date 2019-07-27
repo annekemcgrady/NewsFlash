@@ -7,7 +7,7 @@ const HeadlineContainer = ({data}) => {
 const articleDisplay = data.map(article => {
   
   return <HeadlineCard
-          key = {article.publishedAt}
+          key = {article.id}
           id={article.id}
           category = {article.category}
           title = {article.title}
