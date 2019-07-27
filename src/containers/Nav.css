@@ -4,6 +4,11 @@
   border:  1px solid red;
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .active {
   background-color: red;
 }

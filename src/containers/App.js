@@ -15,7 +15,7 @@ export class App extends Component {
     let responseGeneral;
     let responseSports;
     let responseScience;
-    let responsePolitics;
+    let responseHealth;
     let responseBusiness;
     let responseEntertainment;
 
@@ -38,10 +38,10 @@ export class App extends Component {
         return {...article, category: 'science', id: scienceId, bookmarked: false }
       })
 
-      responsePolitics = await fetchCategoryHeadlines('politics')
-      const cleanedPolArts = responsePolitics.articles.map((article,i) => {
-        let politicsId= `po-${i+1}`
-        return {...article, category: 'politics', id: politicsId, bookmarked: false }
+      responseHealth = await fetchCategoryHeadlines('health')
+      const cleanedHealthArts = responseHealth.articles.map((article,i) => {
+        let healthId= `po-${i+1}`
+        return {...article, category: 'health', id: healthId, bookmarked: false }
       })
 
       responseBusiness = await fetchCategoryHeadlines('business')
@@ -56,8 +56,8 @@ export class App extends Component {
         return {...article, category: 'entertainment', id: entertainmentId, bookmarked: false }
       })
 
-      Promise.all([cleanedGenArts, cleanedSportsArts, cleanedSciArts, cleanedPolArts, cleanedBusArts, cleanedEntArts])
-      const cleanedArticles = [...cleanedGenArts, ...cleanedSportsArts, ...cleanedSciArts, ...cleanedPolArts, ...cleanedBusArts, ...cleanedEntArts]
+      Promise.all([cleanedGenArts, cleanedSportsArts, cleanedSciArts, cleanedHealthArts, cleanedBusArts, cleanedEntArts])
+      const cleanedArticles = [...cleanedGenArts, ...cleanedSportsArts, ...cleanedSciArts, ...cleanedHealthArts, ...cleanedBusArts, ...cleanedEntArts]
       this.props.setHeadlines(cleanedArticles)
     } catch(error) {
       throw new Error("Error", error.message)
@@ -80,12 +80,12 @@ export class App extends Component {
     
     return (
       <div className="App">
-        <Route  path='/' component={Nav} />
-        <Route exact path='/general' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
+        <Route path='/' component={Nav} />
+        <Route path='/main' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
         <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
         <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
         <Route exact path='/business' render={() => <HeadlineContainer data={this.filterArticles('business')} />}/>
-        <Route exact path='/politics' render={() => <HeadlineContainer data={this.filterArticles('politics')} />}/>
+        <Route exact path='/health' render={() => <HeadlineContainer data={this.filterArticles('health')} />}/>
         <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
         <Route path='/article/:id' render={({ match }) => {
           const article = this.props.headlines.find(article => article.id === match.params.id);
