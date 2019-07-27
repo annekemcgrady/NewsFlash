@@ -16,28 +16,48 @@ export class App extends Component {
     let responseSports;
     let responseScience;
     let responsePolitics;
+    let responseBusiness;
     let responseEntertainment;
 
     try {
       responseGeneral = await fetchHeadlines()
       
-      const cleanedGeneralArticles = responseGeneral.articles.map((article, i) => {
+      const cleanedGenArts = responseGeneral.articles.map((article, i) => {
         let genId= `gen-${i+1}`
         return {...article, category: 'general', id: genId, bookmarked: false }
       })
       responseSports = await fetchCategoryHeadlines('sports')
-      const cleanedSportsArticles = responseSports.articles.map((article,i) => {
+      const cleanedSportsArts = responseSports.articles.map((article,i) => {
         let sportsId= `sp-${i+1}`
         return {...article, category: 'sports', id: sportsId, bookmarked: false }
       })
 
       responseScience = await fetchCategoryHeadlines('science')
-      const cleanedScienceArticles = responseScience.articles.map((article,i) => {
+      const cleanedSciArts = responseScience.articles.map((article,i) => {
         let scienceId= `sc-${i+1}`
         return {...article, category: 'science', id: scienceId, bookmarked: false }
       })
-      Promise.all([cleanedGeneralArticles, cleanedSportsArticles])
-      const cleanedArticles = [...cleanedGeneralArticles, ...cleanedSportsArticles, ...cleanedScienceArticles]
+
+      responsePolitics = await fetchCategoryHeadlines('politics')
+      const cleanedPolArts = responsePolitics.articles.map((article,i) => {
+        let politicsId= `po-${i+1}`
+        return {...article, category: 'politics', id: politicsId, bookmarked: false }
+      })
+
+      responseBusiness = await fetchCategoryHeadlines('business')
+      const cleanedBusArts = responseBusiness.articles.map((article,i) => {
+        let businessId= `bu-${i+1}`
+        return {...article, category: 'business', id: businessId, bookmarked: false }
+      })
+
+      responseEntertainment = await fetchCategoryHeadlines('entertainment')
+      const cleanedEntArts = responseEntertainment.articles.map((article,i) => {
+        let entertainmentId= `en-${i+1}`
+        return {...article, category: 'entertainment', id: entertainmentId, bookmarked: false }
+      })
+
+      Promise.all([cleanedGenArts, cleanedSportsArts, cleanedSciArts, cleanedPolArts, cleanedBusArts, cleanedEntArts])
+      const cleanedArticles = [...cleanedGenArts, ...cleanedSportsArts, ...cleanedSciArts, ...cleanedPolArts, ...cleanedBusArts, ...cleanedEntArts]
       this.props.setHeadlines(cleanedArticles)
     } catch(error) {
       throw new Error("Error", error.message)
@@ -49,12 +69,12 @@ export class App extends Component {
       return this.props.headlines.filter(item => 
         item.category === category
         )
-     } else {
+      } else {
       return this.props.articles.filter(item => 
         item.bookmarked === true
         )
-     }
-   }
+    }
+  }
     
   render() {
     
@@ -63,6 +83,10 @@ export class App extends Component {
         <Route  path='/' component={Nav} />
         <Route exact path='/general' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
         <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
+        <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
+        <Route exact path='/business' render={() => <HeadlineContainer data={this.filterArticles('business')} />}/>
+        <Route exact path='/politics' render={() => <HeadlineContainer data={this.filterArticles('politics')} />}/>
+        <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
         <Route path='/article/:id' render={({ match }) => {
           const article = this.props.headlines.find(article => article.id === match.params.id);
               if (!article) {

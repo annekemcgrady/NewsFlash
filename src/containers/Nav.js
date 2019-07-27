@@ -18,7 +18,7 @@ render() {
         <NavLink to='/general' className='nav-button'>Top Headlines</NavLink>
         <NavLink to='/politics' className='nav-button'>Politics</NavLink>
         <NavLink to='/science' className='nav-button'>Science</NavLink>
-        <NavLink to='/money' className='nav-button'>Money</NavLink>
+        <NavLink to='/business' className='nav-button'>Business</NavLink>
         <NavLink to='/entertainment' className='nav-button'>Entertainment</NavLink>
         <NavLink to='/sports' className='nav-button'>Sports</NavLink>
       </section>
