@@ -4,12 +4,11 @@ import HeadlineCard from './HeadlineCard';
 
 const HeadlineContainer = ({data}) => {
 
-console.log(data)  
 const articleDisplay = data.map(article => {
   
   return <HeadlineCard
-          key = {article.publishedAt}
-          id = {article.publishedAt}
+          key = {article.id}
+          id={article.id}
           category = {article.category}
           title = {article.title}
           author = {article.author}

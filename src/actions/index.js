@@ -4,3 +4,10 @@ export const addHeadlines = (headlines) => {
     headlines
   })
 }
+
+export const addError = (errorMsg) => {
+  return ({
+    type: 'ADD_ERROR',
+    errorMsg
+  })
+}
