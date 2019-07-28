@@ -1,9 +1,10 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './HeadlineCard.css';
 import { NavLink } from 'react-router-dom';
 
 
-const HeadlineCard = ({ id, icon, category, title, author, gist, url, bookmarked }) => {
+export const HeadlineCard = ({ id, icon, category, title, author, gist, url, bookmarked }) => {
 console.log(icon)
   return(
     <div className='card'>
