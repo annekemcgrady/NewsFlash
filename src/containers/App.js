@@ -80,6 +80,7 @@ export class App extends Component {
     
     return (
       <div className="App">
+        { this.props.error  &&  <div>Sorry, we are having trouble loading...</div> }
         <Route path='/' component={Nav} />
         <Route exact path='/main' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
         <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
