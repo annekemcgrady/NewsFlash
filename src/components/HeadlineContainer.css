@@ -11,5 +11,6 @@
   width: 100%;
   transform: translateY(-50px);
   padding-top: 220px;
-  background-color: lightslategray;
+  background: lightslategray;
+  background-image: url('../images/newsprint.jpg'), linear-gradient(#333, #333 50%, #eee 75%, #333 75%);
 }
