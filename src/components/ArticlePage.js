@@ -5,9 +5,6 @@ import { connect } from 'react-redux';
 
 export const ArticlePage = (props) => {
 
-console.log(props.id)
-
-
 const {title, author, source, category, content, id} = props
   
   return(

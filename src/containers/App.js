@@ -8,7 +8,7 @@ import NotFound from '../components/NotFound';
 import { connect } from 'react-redux';
 import { fetchHeadlines, fetchCategoryHeadlines, fetchGIF } from '../apiCalls/apiCalls.js';
 import { addHeadlines, addError } from '../actions';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 
 
 export class App extends Component {
@@ -83,20 +83,23 @@ export class App extends Component {
     return (
       <div className="App">
         { this.props.error  &&  <div>Sorry, we are having trouble loading...</div> }
-        <Route path='/' component={ Nav} />
-        <Route exact path= '/' component={ Home } />
-        <Route exact path='/general' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
-        <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
-        <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
-        <Route exact path='/business' render={() => <HeadlineContainer data={this.filterArticles('business')} />}/>
-        <Route exact path='/health' render={() => <HeadlineContainer data={this.filterArticles('health')} />}/>
-        <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
-        <Route exact path='/:category/:id' render={({ match }) => {
-          const { id } = match.params
-          const foundArticle = this.props.headlines.find(article => article.id === match.params.id);
-            return foundArticle && <ArticlePage {...foundArticle} />              
-            }} /> 
-        <Route path ='*' component={NotFound} />
+        
+          <Route path='/' component={ Nav} />
+            <Switch>
+            <Route exact path= '/' component={ Home } />
+            <Route exact path='/general' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
+            <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
+            <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
+            <Route exact path='/business' render={() => <HeadlineContainer data={this.filterArticles('business')} />}/>
+            <Route exact path='/health' render={() => <HeadlineContainer data={this.filterArticles('health')} />}/>
+            <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
+            <Route exact path='/:category/:id' render={({ match }) => {
+              const { id } = match.params
+              const foundArticle = this.props.headlines.find(article => article.id === match.params.id);
+                return foundArticle && <ArticlePage {...foundArticle} />              
+                }} /> 
+            <Route path='*' component={NotFound} />
+          </Switch>
       </div>
     );
   }
