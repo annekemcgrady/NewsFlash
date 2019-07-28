@@ -2,19 +2,22 @@ import React from 'react';
 import './HeadlineContainer.css';
 import HeadlineCard from './HeadlineCard';
 
+
 const HeadlineContainer = ({data}) => {
 
-const articleDisplay = data.map(article => {
-  
+  const articleDisplay = data.map(article => {
+
   return <HeadlineCard
           key = {article.id}
           id={article.id}
-          category = {article.category}
+          category={article.category}
+          icon = {article.icon}
           title = {article.title}
           author = {article.author}
           gist = {article.description}
           source = {article.source.name}
-          url = {article.urlToImage}
+          url = {article.url}
+          bookmarked={article.bookmarked}
           />
 })
 
