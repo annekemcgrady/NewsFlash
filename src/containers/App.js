@@ -9,6 +9,12 @@ import { connect } from 'react-redux';
 import { fetchHeadlines, fetchCategoryHeadlines, fetchGIF } from '../apiCalls/apiCalls.js';
 import { addHeadlines, addError } from '../actions';
 import { Route, Switch } from 'react-router';
+import newspaper from '../images/newspaper.png';
+import camera from '../images/camera.png';
+import piggy from '../images/piggy-bank.png';
+import flasks from '../images/flasks.png';
+import trophy from '../images/trophy.png';
+import stethoscope from '../images/stethoscope.png';
 
 
 export class App extends Component {
@@ -26,36 +32,36 @@ export class App extends Component {
       
       const cleanedGenArts = responseGeneral.articles.map((article, i) => {
         let genId= `gen-${i+1}`
-        return {...article, category: 'general', id: genId, bookmarked: false }
+        return {...article, category: 'general', id: genId, bookmarked: false, icon: newspaper}
       })
       responseSports = await fetchCategoryHeadlines('sports')
       const cleanedSportsArts = responseSports.articles.map((article,i) => {
         let sportsId= `sp-${i+1}`
-        return {...article, category: 'sports', id: sportsId, bookmarked: false }
+        return {...article, category: 'sports', id: sportsId, bookmarked: false, icon: trophy }
       })
 
       responseScience = await fetchCategoryHeadlines('science')
       const cleanedSciArts = responseScience.articles.map((article,i) => {
         let scienceId= `sc-${i+1}`
-        return {...article, category: 'science', id: scienceId, bookmarked: false }
+        return {...article, category: 'science', id: scienceId, bookmarked: false, icon: flasks }
       })
 
       responseHealth = await fetchCategoryHeadlines('health')
       const cleanedHealthArts = responseHealth.articles.map((article,i) => {
         let healthId= `po-${i+1}`
-        return {...article, category: 'health', id: healthId, bookmarked: false }
+        return {...article, category: 'health', id: healthId, bookmarked: false, icon: stethoscope}
       })
 
       responseBusiness = await fetchCategoryHeadlines('business')
       const cleanedBusArts = responseBusiness.articles.map((article,i) => {
         let businessId= `bu-${i+1}`
-        return {...article, category: 'business', id: businessId, bookmarked: false }
+        return {...article, category: 'business', id: businessId, bookmarked: false, icon: piggy}
       })
 
       responseEntertainment = await fetchCategoryHeadlines('entertainment')
       const cleanedEntArts = responseEntertainment.articles.map((article,i) => {
         let entertainmentId= `en-${i+1}`
-        return {...article, category: 'entertainment', id: entertainmentId, bookmarked: false }
+        return {...article, category: 'entertainment', id: entertainmentId, bookmarked: false, icon: camera }
       })
 
       Promise.all([cleanedGenArts, cleanedSportsArts, cleanedSciArts, cleanedHealthArts, cleanedBusArts, cleanedEntArts])
@@ -103,11 +109,11 @@ export class App extends Component {
       </div>
     );
   }
-
 };
 
 export const mapStateToProps = state => ({
-  headlines: state.headlines
+  headlines: state.headlines,
+  error: state.error
 })
 
 export const mapDispatchToProps = dispatch => ({

@@ -1,7 +1,17 @@
 
 .not-found {
-  width: 100%;
-  background-color: aqua;
-  color: blueviolet;
-  height: 80vh;
-}
+    background-color:antiquewhite;
+    color: darkslategray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    transform: translateY(-50px);
+    padding-top: 220px;
+    font-size: 1.5em;
+  }

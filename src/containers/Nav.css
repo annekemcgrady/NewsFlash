@@ -1,31 +1,66 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .Nav {
   height: 100px;
   width: 100%;
-  border:  1px solid black;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  position: fixed;
+  z-index: 5;
+  background-color: antiquewhite;
+  color: darkslategray;
+  border-bottom: .5px solid darkslategray;
+}
+
+.logo {
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  height: 100px;
+  font-size: 2em;
 }
 
 h1{
   align-self: flex-start;
   margin-bottom: auto;
+  margin-top: auto;
+}
+
+.title-news {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.title-flash {
+  font-style: italic;
+  margin-top: 0;
+  padding-top:0;
+}
+
+img {
+  margin-bottom: 10px;
+  height: 50px;
+  width: 50px;
 }
 
 .button-container {
   display: flex;
+
   justify-content: space-around;
+  margin: 10px;
 }
 
 .active {
-  background-color: blueviolet;
+  font-style: italic;
+  font-style: bold;
 }
 
 .nav-button {
-  width: 150px;
-  height: 30px;
-  border-radius: 5px;
+  width: 170px;
+  height: 120px;
   text-decoration: none;
   color: black;
-  border: 1px solid black;
+  margin: 10px;
 }
