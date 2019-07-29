@@ -92,7 +92,7 @@ export class App extends Component {
         
           <Route path='/' component={ Nav} />
             <Switch>
-            <Route exact path= '/home' component={ Home } />
+            <Route exact path= '/' component={ Home } />
             <Route exact path='/general' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
             <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
             <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
@@ -100,12 +100,11 @@ export class App extends Component {
             <Route exact path='/health' render={() => <HeadlineContainer data={this.filterArticles('health')} />}/>
             <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
             <Route exact path='/:category/:id' render={({ match }) => {
-              const { id } = match.params
               const foundArticle = this.props.headlines.find(article => article.id === match.params.id);
                 return foundArticle && <ArticlePage {...foundArticle} />              
                 }} /> 
-            <Route path='*' component={NotFound} />
-          </Switch>
+          <Route path='*' component={NotFound} />
+            </Switch>
       </div>
     );
   }
