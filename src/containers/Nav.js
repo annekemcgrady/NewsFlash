@@ -7,6 +7,7 @@ import piggy from '../images/piggy-bank.png';
 import flasks from '../images/flasks.png';
 import trophy from '../images/trophy.png';
 import stethoscope from '../images/stethoscope.png';
+import house from '../images/home.png';
 // import { connect } from 'react-redux';
 
 export class Nav extends Component {
@@ -30,7 +31,7 @@ render() {
         <NavLink to='/science' className='nav-button'><img src={flasks} alt='beakers'/> <br/>Science</NavLink>
         <NavLink to='/entertainment' className='nav-button'><img src={camera} alt='camera'/><br/>Entertainment</NavLink>
         <NavLink to='/sports' className='nav-button'><img src={trophy} alt='trophy'/><br/>Sports</NavLink>
-        <NavLink to='/home' className='home-button'>Home</NavLink>
+        <NavLink to='/home' className='nav-button'><img src={house} alt='home'/><br/>Home</NavLink>
       </section>
     </div>
   );

@@ -54,3 +54,7 @@ a.back-btn:hover {
   font-style: italic;
   font-size: 1.1em;
   }
+
+  .description {
+    width: 700px;
+  }

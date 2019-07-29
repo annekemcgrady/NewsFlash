@@ -1,14 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from './App';
+import { App, filterArticles, mapStateToProps, mapDispatchToProps } from './App';
 import { shallow, mount } from 'enzyme';
+import { fetchHeadlines } from '../apiCalls/apiCalls.js';
+import {addHeadlines, addError } from '../actions';
 
 describe('App', () => {
   let wrapper;
   let instance;
+  let mockFilterArticles = jest.fn()
+
+  let props = {
+    responseGeneral: [],
+    responseSports: [],
+    responseScience: [],
+    responseEntertainment: [],
+    responseHealth: [],
+    responseBusiness: [],
+    headlines: [{title: 'artOne', category: 'sports'}, {title: 'artTwo', category: 'general'}],
+    addHeadlines: jest.fn(),
+    addError: jest.fn(),
+  }
+  let mockHeadlinesResponse = {title: 'Title', content: 'words' }
+  
+  jest.mock('../apiCalls/apiCalls.js', () => ({ 
+  fetchHeadlines: jest.fn().mockImplementation(()=> {
+      return Promise.resolve(mockHeadlinesResponse)
+      }), 
+  fetchCategoryHeadlines: jest.fn().mockImplementation(()=> {
+    return Promise.resolve(mockHeadlinesResponse)
+    })
+    
+  }))
 
   beforeEach(() => {
-    wrapper = shallow(<App />)
+    wrapper = shallow(<App 
+              {...props}
+              filterArticles={mockFilterArticles}
+            />)
     instance = wrapper.instance()
   })
 
@@ -16,14 +45,44 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  //should call fetchHeadlines
+  //fetchHeadlines
 
-  //should call fetchCategoryHeadlines with a category
+  //fetchCategoryHeadlines
 
-  //filterArticles 
 
-  //mapStateToProps
 
-  //mapDispatchToProps
+  it('filterArticles should return filtered articles', ()=> {
+    const expected = [{title: 'artOne', category: 'sports'}]
+    const result = wrapper.instance().filterArticles('sports')
+    expect(result).toEqual(expected)
+    
+  })
 
+  describe('mapStateToProps', ()=> { 
+    
+    it('should return objects with the headlines array', () => {
+      const mockState = {
+          headlines: [{tite: "words"}],
+          error: ""
+        }
+        const expected = {
+          headlines: [{tite: "words"}],
+          error: ""
+        }
+        const mappedProps = mapStateToProps(mockState)
+        expect(mappedProps).toEqual(expected)
+      })
+  })
+
+  describe('mapDispatchToProps', ()=> {
+    it('calls dispatch with a setHeadlines action',()=> {
+
+      const mockDispatch = jest.fn()
+      const actionToDispatch = addHeadlines([{title: 'words'}])
+      const mappedProps = mapDispatchToProps(mockDispatch)
+      mappedProps.setHeadlines([{title: 'words'}])
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+    });
 })
+
+});

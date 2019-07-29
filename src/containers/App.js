@@ -72,7 +72,7 @@ export class App extends Component {
     }
   }
 
-  filterArticles = (category) => {
+ filterArticles = (category) => {
     if (category !== 'bookmarked') {
       return this.props.headlines.filter(item => 
         item.category === category
