@@ -1,7 +1,6 @@
 import React from 'react';
 import './HeadlineContainer.css';
-import HeadlineCard from './HeadlineCard';
-
+import  HeadlineCard  from './HeadlineCard';
 
 const HeadlineContainer = ({data}) => {
 
@@ -17,7 +16,6 @@ const HeadlineContainer = ({data}) => {
           gist = {article.description}
           source = {article.source.name}
           url = {article.url}
-          bookmarked={article.bookmarked}
           />
 })
 

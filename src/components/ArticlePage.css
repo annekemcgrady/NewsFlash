@@ -9,7 +9,7 @@
   position: relative;
   z-index: 3;
   width: 100%;
-  padding-top: 220px;
+  padding-top: 200px;
   background-color: #D6ED17;
 }
 
@@ -44,10 +44,9 @@ h5 {
 
 .gif {
   margin-top: 20px;
-  height: 2em;
-  width: 2em;
+  height: 250px;
+  width: 300px;
 }
-
 
 a.back-btn:hover {
   cursor: pointer;
