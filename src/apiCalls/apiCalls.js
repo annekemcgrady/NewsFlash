@@ -15,7 +15,6 @@ let url = `https://newsapi.org/v2/top-headlines?country=us&category=general&apiK
     } catch (error) {
         throw new Error(error.message)
     }
-
 }
 
 export const fetchCategoryHeadlines = async category => {
@@ -24,7 +23,7 @@ let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&
 try {
     let response = await fetch(url)
     if (!response.ok) {
-        throw new Error ('There was a problem finding articles')
+        throw new Error ('There was a problem finding category articles')
     } else {
         const results  = await response.json();
         return results;
@@ -35,7 +34,6 @@ try {
 }
 
 export const fetchGIF = async search => {
-console.log("fetchGif is firing")
 let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${search}&limit=1&offset=0&rating=PG-13&lang=en`
 try {
     let response = await fetch(url)

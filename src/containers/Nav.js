@@ -24,7 +24,7 @@ const Nav = () => {
         <NavLink to='/science' className='nav-button'><img src={flasks} alt='beakers'/> <br/>Science</NavLink>
         <NavLink to='/entertainment' className='nav-button'><img src={camera} alt='camera'/><br/>Entertainment</NavLink>
         <NavLink to='/sports' className='nav-button'><img src={trophy} alt='trophy'/><br/>Sports</NavLink>
-        <NavLink to='/' className='nav-button'><img src={house} alt='home'/><br/>Home</NavLink>
+        <NavLink exact to='/' className='nav-button'><img src={house} alt='home'/><br/>Home</NavLink>
       </section>
     </div>
   );

@@ -71,7 +71,7 @@ describe('apiCalls', () => {
           ok: false
         })
       })
-      await expect(fetchCategoryHeadlines()).rejects.toEqual(Error('There was a problem finding articles'))
+      await expect(fetchCategoryHeadlines()).rejects.toEqual(Error('There was a problem finding category articles'))
     })
   })
 
