@@ -8,7 +8,7 @@ const {title, author, category, description, url, gif} = props
   
   return(
     <div className="article-page">
-      <NavLink to={`/${category}`} className='back-btn'> ◀ Back To Headlines</NavLink>
+      <NavLink exact to={`/${category}`} className='back-btn'> ◀ Back To Headlines</NavLink>
       <h3>{title}</h3>
       <h5>{author}</h5>
       <div className='description'>Gist: {description}</div>

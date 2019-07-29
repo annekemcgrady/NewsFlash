@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeadlineContainer.css';
-import  HeadlineCard  from './HeadlineCard';
+import  HeadlineCard  from '../containers/HeadlineCard';
 
 const HeadlineContainer = ({data}) => {
 
