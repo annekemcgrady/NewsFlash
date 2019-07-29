@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Nav.css';
 import { NavLink } from 'react-router-dom';
 import newspaper from '../images/newspaper.png';
@@ -8,15 +8,8 @@ import flasks from '../images/flasks.png';
 import trophy from '../images/trophy.png';
 import stethoscope from '../images/stethoscope.png';
 import house from '../images/home.png';
-// import { connect } from 'react-redux';
 
-export class Nav extends Component {
-  
-componentDidMount() {
-
-  }
-  
-render() {
+const Nav = () => {
   
   return (
     <div className="Nav">
@@ -35,7 +28,6 @@ render() {
       </section>
     </div>
   );
-}
 
 }
 
