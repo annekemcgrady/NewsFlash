@@ -19,5 +19,12 @@ const {title, author, category, description, url, gif} = props
   )
 };
 
+ArticlePage.propTypes = {
+  title: PropTypes.string,
+  author: PropTypes.string,
+  category: PropTypes.string,
+  description: PropTypes.string,
+  gif: PropTypes.string,
+}
 
 export default ArticlePage;

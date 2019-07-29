@@ -121,4 +121,12 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 
+App.propTypes = {
+  headlines: PropTypes.string,
+  error: PropTypes.string,
+  gif: PropTypes.string,
+  setHeadlines: PropTypes.func,
+  setError: PropTypes.func
+}
+
 export default connect(mapStateToProps,mapDispatchToProps)(App);

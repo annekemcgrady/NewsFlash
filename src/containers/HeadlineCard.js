@@ -4,6 +4,7 @@ import './HeadlineCard.css';
 import { NavLink } from 'react-router-dom';
 import { fetchGIF } from '../apiCalls/apiCalls.js';
 import { addGIF, addError} from '../actions';
+import PropTypes from 'prop-types'; 
 
 
 export class HeadlineCard extends Component {
@@ -41,4 +42,16 @@ export const mapDispatchToProps = dispatch => ({
   setError: errorMsg => dispatch(addError(errorMsg))
 })
 
+
+HeadlineCard.propTypes = {
+  id: PropTypes.number,
+  category: PropTypes.string,
+  title: PropTypes.string,
+  icon: PropTypes.string,
+  setGIF: PropTypes.func,
+  setERror: PropTypes.func
+}
+
 export default connect(null, mapDispatchToProps)(HeadlineCard);
+
+
