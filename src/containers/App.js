@@ -72,7 +72,7 @@ export class App extends Component {
     }
   }
 
-  filterArticles = (category) => {
+ filterArticles = (category) => {
     if (category !== 'bookmarked') {
       return this.props.headlines.filter(item => 
         item.category === category
@@ -100,12 +100,11 @@ export class App extends Component {
             <Route exact path='/health' render={() => <HeadlineContainer data={this.filterArticles('health')} />}/>
             <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
             <Route exact path='/:category/:id' render={({ match }) => {
-              const { id } = match.params
               const foundArticle = this.props.headlines.find(article => article.id === match.params.id);
                 return foundArticle && <ArticlePage {...foundArticle} />              
                 }} /> 
-            <Route path='*' component={NotFound} />
-          </Switch>
+          <Route path='*' component={NotFound} />
+            </Switch>
       </div>
     );
   }
@@ -122,4 +121,4 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);

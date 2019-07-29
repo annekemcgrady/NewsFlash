@@ -10,7 +10,22 @@
   position: relative;
   z-index: 3;
   width: 100%;
-  transform: translateY(-50px);
-  padding-top: 220px;
+  padding-top: 150px;
   font-size: 2em;
+}
+
+.headline {
+  font-size: 1.7em;
+}
+
+span {
+  font-style: italic;
+}
+.home-gif {
+  height: 200px;
+  width: 200px;
+}
+
+.credits, .api-credits {
+  font-size: .3em;
 }

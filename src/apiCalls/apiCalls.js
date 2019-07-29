@@ -40,7 +40,7 @@ try {
     let response = await fetch(url)
 
     if (!response.ok) {
-        throw new Error ('There was a problem finding articles')
+        throw new Error ('There was a problem finding gif')
     } else {
         const results  = await response.json();
         return results;

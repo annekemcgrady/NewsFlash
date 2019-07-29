@@ -1,14 +1,14 @@
 
 .card {
-  height: 80px;
+  height: 70px;
+  border-radius: 5px;
   width: 96%;
-  border: 1px solid black;
-  padding: 10px;
-  margin: 10px;
+  border: 1px solid lightslategray;
+  margin: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0, 15, 0, 15;
+  padding: 10px;
   background-color: #F9F7F7;
 }
 h2{
@@ -37,4 +37,5 @@ a.card-navlink:hover {
   cursor: pointer;
   font-style: italic;
   font-size: .9em;
+  color: #D6ED17;
   }

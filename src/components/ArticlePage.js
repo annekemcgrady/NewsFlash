@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 export const ArticlePage = (props) => {
 
-const {title, author, category, description, content, id, url} = props
+const {title, author, category, description, id, url} = props
   
   return(
     <div className="article-page">
@@ -14,7 +14,7 @@ const {title, author, category, description, content, id, url} = props
       <h3>{title}</h3>
       <h5>{author}</h5>
       <div className='description'>Gist: {description}</div>
-      <a target="_blank" href={url}>Link to Full Article </a>
+      <a target="_blank" href={url} className="art-link">Link to Full Article </a>
       {/* <img src="" alt="gif" className='gif'/> */}
     </div>
   )

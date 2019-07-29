@@ -9,17 +9,16 @@
   padding: 10px;
   position: fixed;
   z-index: 5;
-  background-color: #DADADA;
-  color: darkslategray;
+  background-color: darkgray;
   border-bottom: .5px solid darkslategray;
 }
 
 .logo {
-  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
   display: flex;
   flex-direction: column;
   height: 100px;
   font-size: 2em;
+  color: #D6ED17;
 }
 
 h1{
@@ -41,20 +40,15 @@ h1{
 
 img {
   margin-bottom: 10px;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
 }
 
 .button-container {
   display: flex;
-
+  color: darkslategray;
   justify-content: space-around;
   margin: 10px;
-}
-
-.active {
-  font-style: italic;
-  font-style: bold;
 }
 
 .nav-button {
@@ -62,5 +56,9 @@ img {
   height: 120px;
   text-decoration: none;
   color: black;
-  margin: 10px;
+  margin: 5px;
+}
+
+.active {
+  font-style: italic;
 }

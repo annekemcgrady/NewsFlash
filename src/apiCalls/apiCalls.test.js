@@ -75,5 +75,41 @@ describe('apiCalls', () => {
     })
   })
 
+  describe('fetchGIF', () => {
+    let mockSearch
+    let mockGIFResponse;
+
+    beforeEach(()=> {
+      mockSearch = 'politics'
+      mockGIFResponse = {title: 'Title', url: 'http' }
+    
+      window.fetch = jest.fn().mockImplementation(()=> {
+        return Promise.resolve({
+          ok: true,
+          json: ()=> Promise.resolve(mockGIFResponse)
+        })
+      })
+    })
+
+    it('should be called with correct params', () => {
+      const expected = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${mockSearch}&limit=20&offset=0&rating=PG-13&lang=en`
+      fetchGIF(mockSearch)
+      expect(window.fetch).toHaveBeenCalledWith(expected)
+    })
+
+    it('should return a parsed response if status is ok', async ()=> {
+      const result = await fetchGIF()
+      expect(result).toEqual(mockGIFResponse)
+    })
+
+    it('should return an error is status is not ok', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      })
+      await expect(fetchGIF()).rejects.toEqual(Error('There was a problem finding gif'))
+    })
+  })
 
 });
