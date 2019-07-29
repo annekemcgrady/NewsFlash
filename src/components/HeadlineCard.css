@@ -4,12 +4,11 @@
   border-radius: 5px;
   width: 96%;
   border: 1px solid lightslategray;
-  padding: 10px;
-  margin: 10px;
+  margin: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0, 15, 0, 15;
+  padding: 10px;
   background-color: #F9F7F7;
 }
 h2{

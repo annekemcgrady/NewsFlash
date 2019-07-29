@@ -51,15 +51,14 @@ img {
   margin: 10px;
 }
 
-.active {
-  font-style: italic;
-  font-style: bold;
-}
-
 .nav-button {
   width: 170px;
   height: 120px;
   text-decoration: none;
   color: black;
   margin: 5px;
+}
+
+.active {
+  font-style: italic;
 }
