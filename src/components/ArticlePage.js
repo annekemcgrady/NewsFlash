@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 export const ArticlePage = (props) => {
 
-const {title, author, category, description, content, id, url} = props
+const {title, author, category, description, id, url} = props
   
   return(
     <div className="article-page">

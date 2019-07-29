@@ -92,7 +92,7 @@ export class App extends Component {
         
           <Route path='/' component={ Nav} />
             <Switch>
-            <Route exact path= '/' component={ Home } />
+            <Route exact path= '/home' component={ Home } />
             <Route exact path='/general' render={() => <HeadlineContainer data={this.filterArticles('general')} />} />
             <Route exact path='/sports' render={() => <HeadlineContainer data={this.filterArticles('sports')} />}/>
             <Route exact path='/science' render={() => <HeadlineContainer data={this.filterArticles('science')} />}/>
@@ -122,4 +122,4 @@ export const mapDispatchToProps = dispatch => ({
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);

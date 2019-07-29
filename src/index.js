@@ -11,7 +11,13 @@ import { rootReducer } from './reducers';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
-const application = <Provider store={store}><BrowserRouter><App/></BrowserRouter></Provider>;
+const application = (
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+  );
 
 
 ReactDOM.render(application, document.getElementById('root'));
