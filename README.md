@@ -2,10 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## NewsFlash
 
-A quick way to browse top trending headlines and choose what to expolore in more depth.
+A quick way to browse top trending headlines and choose what to expolore in more depth.  
+This application uses React, React Router and Redux.
 
 ## Author:
-[AnnekeMcGrady](https://github.com/annekemcgrady)
+[Anneke McGrady](https://github.com/annekemcgrady)
 
 ## To View:
 
@@ -15,3 +16,5 @@ Run `npm start`
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Screenshots/GIFs
+![]()
