@@ -35,7 +35,8 @@ try {
 }
 
 export const fetchGIF = async search => {
-let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${search}&limit=20&offset=0&rating=PG-13&lang=en`
+console.log("fetchGif is firing")
+let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${search}&limit=1&offset=0&rating=PG-13&lang=en`
 try {
     let response = await fetch(url)
 

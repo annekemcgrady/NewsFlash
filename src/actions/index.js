@@ -11,3 +11,10 @@ export const addError = (errorMsg) => {
     errorMsg
   })
 }
+
+export const addGIF = (gifURL) => {
+  return ({
+    type: 'ADD_GIF',
+    gifURL
+  })
+}

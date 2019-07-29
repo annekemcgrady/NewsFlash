@@ -8,7 +8,7 @@ import {addHeadlines, addError } from '../actions';
 describe('App', () => {
   let wrapper;
   let instance;
-  let mockFilterArticles = jest.fn()
+  let mockFilterArticles;
 
   let props = {
     responseGeneral: [],
@@ -34,6 +34,7 @@ describe('App', () => {
   }))
 
   beforeEach(() => {
+    mockFilterArticles = jest.fn()
     wrapper = shallow(<App 
               {...props}
               filterArticles={mockFilterArticles}
@@ -45,10 +46,15 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  //fetchHeadlines
+it('should call fetchHeadlines on componentDidMount', async ()=> {
+  await instance.componentDidMount()
+  expect(fetchHeadlines).toHaveBeenCalled()
+})
 
-  //fetchCategoryHeadlines
-
+  it('should call fetchCategoryHeadlines on componentDidMount', async ()=> {
+    await instance.componentDidMount()
+    expect(fetchCategoryHeadlines).toHaveBeenCalled()
+  })
 
 
   it('filterArticles should return filtered articles', ()=> {

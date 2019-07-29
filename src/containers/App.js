@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import HeadlineContainer from '../components/HeadlineContainer';
+import  HeadlineContainer  from '../components/HeadlineContainer';
 import ArticlePage from '../components/ArticlePage';
 import Home from '../components/Home';
 import Nav from './Nav.js';
 import NotFound from '../components/NotFound';
 import { connect } from 'react-redux';
-import { fetchHeadlines, fetchCategoryHeadlines, fetchGIF } from '../apiCalls/apiCalls.js';
+import { fetchHeadlines, fetchCategoryHeadlines } from '../apiCalls/apiCalls.js';
 import { addHeadlines, addError } from '../actions';
 import { Route, Switch } from 'react-router';
 import newspaper from '../images/newspaper.png';
@@ -89,7 +89,6 @@ export class App extends Component {
     return (
       <div className="App">
         { this.props.error  &&  <div>Sorry, we are having trouble loading...</div> }
-        
           <Route path='/' component={ Nav} />
             <Switch>
             <Route exact path= '/' component={ Home } />
@@ -101,7 +100,7 @@ export class App extends Component {
             <Route exact path='/entertainment' render={() => <HeadlineContainer data={this.filterArticles('entertainment')} />}/>
             <Route exact path='/:category/:id' render={({ match }) => {
               const foundArticle = this.props.headlines.find(article => article.id === match.params.id);
-                return foundArticle && <ArticlePage {...foundArticle} />              
+                return foundArticle && <ArticlePage {...foundArticle} gif={this.props.gif} />              
                 }} /> 
           <Route path='*' component={NotFound} />
             </Switch>
@@ -112,7 +111,8 @@ export class App extends Component {
 
 export const mapStateToProps = state => ({
   headlines: state.headlines,
-  error: state.error
+  error: state.error,
+  gif: state.gif
 })
 
 export const mapDispatchToProps = dispatch => ({
