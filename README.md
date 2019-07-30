@@ -1,9 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## NewsFlash
 
 A quick way to browse top trending headlines and choose what to expolore in more depth.  
 This application uses React, React Router and Redux.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Author:
 [Anneke McGrady](https://github.com/annekemcgrady)
@@ -19,4 +19,4 @@ Run npm start and visit localhost:3000 in your browser
 ![Home](https://github.com/annekemcgrady/NewsFlash/blob/master/src/images/Newsflash_home.png)
 ![TopHeadlines](https://github.com/annekemcgrady/NewsFlash/blob/master/src/images/Newsflash_topheadlines.png)
 ![ArticlePage](https://github.com/annekemcgrady/NewsFlash/blob/master/src/images/Newsflash_articlepage.png)
-
+![Gif](https://github.com/annekemcgrady/NewsFlash/blob/master/src/images/Newsflash_articlepage.png)
