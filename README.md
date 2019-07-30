@@ -16,4 +16,4 @@ Run npm install from the root directory
 Run npm start and visit localhost:3000 in your browser
 
 ## Screenshots/GIFs
-![]()
+![Home](https://github.com/annekemcgrady/NewsFlash/blob/master/src/images/Newsflash_home.png)
