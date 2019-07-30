@@ -11,5 +11,5 @@
   transform: translateY(-50px);
   padding-top: 220px;
   background: lightslategray;
-  background-image: url('../images/newsprint.jpg');
+  background-image: url("../images/newsprint.jpg");
 }

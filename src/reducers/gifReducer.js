@@ -1,8 +1,8 @@
-export const gifReducer = (state ="", action) => {
+export const gifReducer = (state = "", action) => {
   switch (action.type) {
-  case 'ADD_GIF':
-  return action.gifURL
-  default:
-  return state
+    case "ADD_GIF":
+      return action.gifURL;
+    default:
+      return state;
   }
-}
+};
