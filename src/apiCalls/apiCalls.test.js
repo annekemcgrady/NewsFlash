@@ -99,7 +99,7 @@ describe("apiCalls", () => {
     });
 
     it("should be called with correct params", () => {
-      const expected = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${mockSearch}&limit=1&offset=0&rating=PG-13&lang=en`;
+      const expected = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${mockSearch}&limit=20&offset=0&rating=PG-13&lang=en`;
       fetchGIF(mockSearch);
       expect(window.fetch).toHaveBeenCalledWith(expected);
     });

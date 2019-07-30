@@ -12,6 +12,11 @@ describe("HeadlineCard", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it.skip("should call setGIF on componentDidMount", async () => {
+    await wrapper.instance().componentDidMount();
+    expect(wrapper.instance().props.setGIF).toHaveBeenCalled();
+  });
+
   describe("mapDispatchToProps", () => {
     it("calls dispatch with a setGIF action", () => {
       const mockDispatch = jest.fn();
