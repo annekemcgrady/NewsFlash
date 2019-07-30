@@ -1,17 +1,16 @@
-
 .not-found {
-    background-color:#DADADA;
-    color: darkslategray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    max-width: 100vw;
-    overflow-x: hidden;
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    transform: translateY(-50px);
-    padding-top: 220px;
-    font-size: 1.5em;
-  }
+  background-color: #dadada;
+  color: darkslategray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  transform: translateY(-50px);
+  padding-top: 220px;
+  font-size: 1.5em;
+}

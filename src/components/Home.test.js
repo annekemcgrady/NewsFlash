@@ -1,16 +1,15 @@
-import React from 'react';
-import Home from './Home'
-import { shallow } from 'enzyme';
+import React from "react";
+import Home from "./Home";
+import { shallow } from "enzyme";
 
-describe('Home', () => {
-
+describe("Home", () => {
   let wrapper;
 
-  beforeEach(()=>{
-    wrapper = shallow(<Home />)
-  })
+  beforeEach(() => {
+    wrapper = shallow(<Home />);
+  });
 
-  it('should match the snapshot', ()=> {
-    expect(wrapper).toMatchSnapshot()
-  })
-})
+  it("should match the snapshot", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});

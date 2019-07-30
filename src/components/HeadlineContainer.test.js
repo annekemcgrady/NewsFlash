@@ -1,15 +1,13 @@
-import React from 'react';
-import HeadlineContainer from './HeadlineContainer.js'
-import { shallow } from 'enzyme';
+import React from "react";
+import HeadlineContainer from "./HeadlineContainer.js";
+import { shallow } from "enzyme";
 
-
-describe('HeadlineContainer', () => {
+describe("HeadlineContainer", () => {
   let wrapper;
-  let data = [{title: 'words', source: {name: 'name'}}]
+  let data = [{ title: "words", source: { name: "name" } }];
 
-  it('should match the snapshot', () => {
-    wrapper = shallow(<HeadlineContainer data={data} />)
-    expect(wrapper).toMatchSnapshot()
-  })
-  
-})
+  it("should match the snapshot", () => {
+    wrapper = shallow(<HeadlineContainer data={data} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+});

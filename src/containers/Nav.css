@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Oleo+Script:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script:700&display=swap");
 
 * {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .Nav {
   height: 110px;
@@ -13,23 +14,16 @@
   position: fixed;
   z-index: 5;
   background-color: darkgray;
-  border-bottom: .5px solid darkslategray;
-  opacity: .9;
+  border-bottom: 0.5px solid darkslategray;
+  opacity: 0.9;
 }
 
 .logo {
   padding: 0;
   display: flex;
   flex-direction: column;
-  /* height: 100px; */
-  color: #D6ED17;
+  color: #d6ed17;
 }
-
-/* h1{
-  align-self: flex-start;
-  margin-bottom: auto;
-  margin-top: auto;
-} */
 
 .title-news {
   margin-bottom: 0;
@@ -39,12 +33,12 @@
 }
 
 .title-flash {
-  font-family: 'Oleo Script', cursive;
+  font-family: "Oleo Script", cursive;
   font-style: italic;
   margin-top: 0;
-  padding-top:0;
+  padding-top: 0;
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 2.8em;
 }
 
 img {
@@ -71,5 +65,5 @@ img {
 
 .active {
   font-style: italic;
-  color: #D6ED17;
+  color: #d6ed17;
 }
