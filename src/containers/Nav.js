@@ -14,8 +14,8 @@ const Nav = () => {
   return (
     <div className="Nav">
       <section className='logo'>
-      <h1 className='title-news'>News</h1>
-      <h1 className='title-flash'>Flash</h1>
+      <p className='title-news'>News</p>
+      <p className='title-flash'>Flash</p>
       </section>
       <section className="button-container">
         <NavLink to='/general' className='nav-button'><img src={newspaper} alt='newspaper' /><br/>Top Headlines</NavLink>

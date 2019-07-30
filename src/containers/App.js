@@ -9,13 +9,13 @@ import { connect } from 'react-redux';
 import { fetchHeadlines, fetchCategoryHeadlines } from '../apiCalls/apiCalls.js';
 import { addHeadlines, addError } from '../actions';
 import { Route, Switch } from 'react-router';
+import PropTypes from 'prop-types'; 
 import newspaper from '../images/newspaper.png';
 import camera from '../images/camera.png';
 import piggy from '../images/piggy-bank.png';
 import flasks from '../images/flasks.png';
 import trophy from '../images/trophy.png';
 import stethoscope from '../images/stethoscope.png';
-
 
 export class App extends Component {
   
@@ -122,7 +122,7 @@ export const mapDispatchToProps = dispatch => ({
 
 
 App.propTypes = {
-  headlines: PropTypes.string,
+  headlines: PropTypes.array,
   error: PropTypes.string,
   gif: PropTypes.string,
   setHeadlines: PropTypes.func,

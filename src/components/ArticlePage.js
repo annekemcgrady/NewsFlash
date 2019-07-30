@@ -1,6 +1,7 @@
 import React from 'react';
 import './ArticlePage.css';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types'; 
 
 export const ArticlePage = (props) => {
 

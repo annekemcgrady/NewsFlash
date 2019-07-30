@@ -44,7 +44,7 @@ export const mapDispatchToProps = dispatch => ({
 
 
 HeadlineCard.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.string,
   category: PropTypes.string,
   title: PropTypes.string,
   icon: PropTypes.string,

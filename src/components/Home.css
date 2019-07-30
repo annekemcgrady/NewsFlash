@@ -1,5 +1,5 @@
 .home {
-  background-color:#DADADA;
+  background-color:#F9F7F7;
   color: darkslategray;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,7 @@
 
 .headline {
   font-size: 1.7em;
+  margin-bottom: 0;
 }
 
 span {
@@ -28,4 +29,5 @@ span {
 
 .credits, .api-credits {
   font-size: .3em;
+  margin-top: 50px;
 }
