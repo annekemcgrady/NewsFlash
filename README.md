@@ -9,12 +9,11 @@ This application uses React, React Router and Redux.
 [Anneke McGrady](https://github.com/annekemcgrady)
 
 ## To View:
+Clone the repo - https://github.com/annekemcgrady/NewsFlash
 
-Clone down this repo
- & run `npm start`
+Run npm install from the root directory
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run npm start and visit localhost:3000 in your browser
 
 ## Screenshots/GIFs
 ![]()
