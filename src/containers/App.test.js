@@ -26,8 +26,8 @@ describe("App", () => {
       { title: "artOne", category: "sports" },
       { title: "artTwo", category: "general" }
     ],
-    addHeadlines: jest.fn(),
-    addError: jest.fn()
+    setHeadlines: jest.fn(),
+    setError: jest.fn()
   };
   let mockHeadlinesResponse = { title: "Title", content: "words" };
 
@@ -50,14 +50,15 @@ describe("App", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip("should call fetchHeadlines on componentDidMount", async () => {
+  it("should call setHeadlines on componentDidMount", async () => {
     await instance.componentDidMount();
-    expect(instance.fetchHeadlines).toHaveBeenCalled();
+    expect(wrapper.instance().props.setHeadlines).toHaveBeenCalled();
   });
 
-  it.skip("should call fetchCategoryHeadlines on componentDidMount", async () => {
+  //not sure how to make this pass as function only runs on a fetch error
+  it.skip("should call setError on componentDidMount", async () => {
     await instance.componentDidMount();
-    expect(fetchCategoryHeadlines).toHaveBeenCalled();
+    expect(wrapper.instance().props.setError).toNotHaveBeenCalled();
   });
 
   it("filterArticles should return filtered articles", () => {

@@ -8,15 +8,17 @@ import PropTypes from "prop-types";
 
 export class HeadlineCard extends Component {
   componentDidMount = async () => {
+    const random= Math.floor(Math.random() * Math.floor(20));
     try {
       const gif = await fetchGIF(this.props.category);
-      this.props.setGIF(gif.data[0].images.downsized.url);
+      this.props.setGIF(gif.data[random].images.downsized.url);
     } catch (error) {
       this.props.setError(error.message);
     }
   };
 
   render() {
+
     const { id, icon, category, title } = this.props;
 
     return (

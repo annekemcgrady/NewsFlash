@@ -33,7 +33,7 @@ export const fetchCategoryHeadlines = async category => {
 };
 
 export const fetchGIF = async search => {
-  let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${search}&limit=1&offset=0&rating=PG-13&lang=en`;
+  let url = `https://api.giphy.com/v1/gifs/search?api_key=${giphyAPI_KEY}&q=${search}&limit=20&offset=0&rating=PG-13&lang=en`;
   try {
     let response = await fetch(url);
 
