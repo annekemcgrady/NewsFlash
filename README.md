@@ -1,9 +1,9 @@
 
 ## NewsFlash
 
-A quick way to browse top trending headlines and choose what to expolore in more depth.  
-This application uses React, React Router and Redux.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Designed for the individual who is too busy and/or too frightened of the news to be informed, NewsFlash provides a quick way to browse top trending headlines and choose what to expolore in more depth.  A user can choose a category to view today's trending headlines in a variety of categories. Each headline has a link to a page with a description of the article and a fun gif. From this page is it possible to open the full article on the original site.
+
+This application uses React, React Router and Redux and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Author:
 [Anneke McGrady](https://github.com/annekemcgrady)
